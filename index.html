@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Name</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        p , li {
+            line-height: 1.5;
+        }
+
+        #card {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #1c1b29;
+            border: 1px solid #1c1b29;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        #text-container {
+            margin: 0 0 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #text-container p {
+            color: white;
+            margin: 0 0 30px 0;
+            font-size: 20px;
+        }
+
+        #text-container h2 {
+            margin: 5px;
+            font-size: 48px;
+        }
+
+        .background-effect {
+            filter: blur(5px) brightness(0.7);
+            transition: filter 0.5s ease-in-out;
+        }
+
+        #hold {
+            cursor: pointer;
+            color: #5858ff;
+            font-size: 24px; 
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <table id="nav">
+        <td style="width: 20%;text-align: left;"  ><div></div><img src="logo.png"></td>
+        <td style="width: 60%;text-align: center;"><h1>Welcome to the OMC IT Department Integration</h1></td>
+        <td style="width: 20%;text-align: right;" ><a style="font-size: 18px;" href="registration.html" id="registration-btn">Join now!</a></td>
+    </table>
+
+    <div id="rest">
+        <p style="color: #5858ff;" id="desc" align="center">Embark on your journey to join our dynamic IT Department this season.<br>(hover the discord icon!!)</p>
+    <table style="width: 100%;" id="articles">
+
+        <colgroup>
+            <col width="20%"><col width="20%">
+            <col width="20%"><col width="20%">
+            <col width="20%">
+        </colgroup>
+
+        <tr>
+            <td colspan="3" style="width: 60%;" class="tdtext">
+                <section>
+                    <h2>Purpose</h2>
+                    <p class="sections">
+                        This assessment isn't just a formality; it's your gateway to showcasing commitment and readiness.
+                        Successfully completing challenges will guide you directly into sub-teams aligned with your tech strengths.
+                    </p>
+                </section>
+            
+                <section>
+                    <h2>How It Works?</h2>
+                    <ul class="sections">
+                        <li><strong>Choose Your Path:</strong> Select tech fields aligning with your interests.</li>
+                        <li><strong>Complete Engaging Tasks:</strong> Tackle beginner-friendly tasks designed to evaluate your dedication and capabilities.</li>
+                        <li><strong>Submit Your Responses:</strong> Share your insights and work via platforms like GitHub.</li>
+                    </ul>
+                </section>
+            </td>
+            <td colspan="2" class="tdimg">
+                <img src="IT.jpg">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="tdimg">
+                <img src="club.jpg">
+            </td>
+            <td colspan="3" style="width: 60%;" class="tdtext">
+                <section>
+                    <h2>Need Assistance?</h2>
+                    <p class="sections">
+                        Reach out to me on
+                        <strong onmouseover="display()" onmouseout="dissappear()" id="hold">
+                            <img style="display: inline-block; vertical-align: middle;margin-bottom: 0;" class="icon" src="icons/discord.png" width="50px" alt="Discord Icon">
+                            <span class="small-text">Discord</span>
+                        </strong>,
+                        for any questions or support during the assessment.
+                    </p>                
+                </section>
+            
+                <section>
+                    <h2>New to Tech?</h2>
+                    <p class="sections">If you're new to tech, select "Still Exploring Tech" in the "Field of Interest" question. We're here to help you explore and discover your interests.</p>
+                </section>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="5">
+                <section style="display: flex; width: 100%;">
+                    <div>
+                        <h2>Deadline</h2>
+                        <p class="sections">One week from initiation. Registrations close after this period.</p>
+                    </div>
+                    <div style="margin: 50px 0px 50px 100px;">
+                        <a style="font-size: 18px;" href="registration.html" id="registration-btn">Join now!</a>
+                    </div>
+                </section>
+            </td>
+        </tr>
+    
+    </table>
+</div>
+
+    <footer>
+        <p>&copy; 2023 IT registration. All rights reserved.<br>Author:<i><a id="git" href="https://github.com/domenez25"> Bouzara Zakaria L3 GTR</a></i></p>
+    </footer>
+</div>
+
+    <div id="card">
+        <img style="margin: 0;" width="50%" id="icon" src="icons/icon.jpg" alt="Your Icon">
+        <div id="text-container">
+            <h2>#Zakkye</h2>
+            <p style="color: white;">domenez25</p>
+            <p><strong>About me:</strong> kicking incredibly dope shit.. oh hi !!</p>
+        </div>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const container = document.getElementById('container');
+
+        function display(){
+            card.style.display = 'flex';
+            container.classList.add('background-effect');
+        }
+
+        function dissappear(){
+            card.style.display = 'none';
+            container.classList.remove('background-effect');
+        }
+    </script>
+
+    
+
+</body>
+</html>

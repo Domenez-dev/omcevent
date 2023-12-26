@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        #left {
+            width: 40%;
+            background-color: #7a75d6;
+        }
+
+        #right {
+            width: 60%;
+        }
+
+        #form {
+            width: 100%;
+            padding: 0 50px;
+            margin-bottom: 10%;
+        }
+
+        #form td {
+            width: 500px;
+            padding: 23px 10%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px #7a75d6 solid;
+            transition: box-shadow ease 0.1s;
+        }
+
+        input:hover {
+            box-shadow: 0 0 3px #7a75d6;
+        }
+
+        #left table {margin: 15% 10% 15% 5%; color: white;}
+        #left strong {font-size: 30px;}
+        #left p {font-size: 18px;}
+
+        img {
+            width: 100px;
+            margin: 10%;
+            padding: 10px;
+        }
+
+        .image {
+            width: 25%;
+        }
+
+        button {
+            padding: 20px 40px;
+            background-color: #55ebae;
+            color: black;
+            text-decoration: none;
+            border: 1px #55ebae solid;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 24px;
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px black;
+        }
+
+        #navt {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
+            text-align: center;
+            position: relative;
+            top: 0;
+            width: 100%;
+            box-shadow: 1px 0px 10px #5858ff;
+            backdrop-filter: blur(5px)
+        }
+
+        .error-input {
+            box-shadow: 1px 0px 10px #fa5a5a;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table id="navt">
+        <td style="width: 20%;text-align: left;"  ><div></div><img src="logo.png"></td>
+        <td style="width: 60%;text-align: center;"><h1>Register Now!</h1></td>
+        <td style="width: 20%;text-align: right;" ><a style="font-size: 18px;" href="index.html" id="registration-btn">back home</a></td>
+    </table>
+    <div style="display: flex; width: 100%;">
+
+    <div id="left">
+        <table>
+            <colgroup>
+                <col width="20%">
+                <col width="80%">
+            </colgroup>
+            <tr>
+                <td class="image">
+                    <img src="icons/people.png">
+                </td>
+                <td>
+                    <p><strong>Skilled People</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="image">
+                    <img src="icons/innov.png">
+                </td>
+                <td>
+                    <p><strong>Innovative Projects</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="image">
+                    <img src="icons/training.png">
+                </td>
+                <td>
+                    <p><strong>Trainings</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="right">
+        <h1 style="font-size: 42px;" align="center">Fill this form to registre</h1>
+        <form onsubmit="confirming()">
+            <table id="form">
+                <colgroup>
+                    <col width="50%">
+                    <col width="50%">
+                </colgroup>
+                <tr>
+                    <td colspan="1">
+                        <label for="fname">First Name:</label><br>
+                        <input type="text" class="inputs" id="fname" name="firstname" placeholder="Enter your first name" required>
+                    </td>
+                    <td colspan="1">
+                        <label for="lname">Last Name:</label><br>
+                        <input type="text" class="inputs" id="lname" name="lastname" placeholder="Enter your last name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">
+                        <label for="interest">Field of Interest:</label><br>
+                        <input type="text" class="inputs" id="interest" name="interest" placeholder="networking, development..." required>
+                    </td>
+                    <td colspan="1">
+                        <label for="skills">List Your Skills:</label><br>
+                        <input type="text" class="inputs" id="skills" name="skills" placeholder="Web dev, AI ..." required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="email">Email:</label><br>
+                        <input type="email" class="inputs2" id="email" name="Email" placeholder="abcd@example.com" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="reason">What do you want to achieve by joining the IT team:</label><br>
+                        <input type="text" class="inputs2" id="reason" name="why" placeholder="well.. let me think for a second" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">
+                        <label for="field">Study Field:</label><br>
+                        <input type="text" class="inputs" id="field" name="Study" placeholder="Licence 3 informatique" required>
+                    </td>
+                    <td colspan="1">
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="text" class="inputs" id="phone" name="phone" maxlength="10" placeholder="+213 556357218" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button align="center" type="submit" id="submit-btn">Submit Application</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    function confirming() {
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const confirmMessage = `Check if this is your correct email and number:\n\n${emailInput.value}\n${phoneInput.value}`;
+        const isConfirmed = confirm(confirmMessage);
+
+        if (isConfirmed) {
+            const thankYouMessage = `Thank you for your application! Keep an eye on your inbox for further updates.`;
+            alert(thankYouMessage);
+        } else {
+            event.preventDefault();
+            emailInput.classList.add('error-input');
+            phoneInput.classList.add('error-input');
+            alert('Returning to the form. Please correct your email and number.');
+        }
+    }
+</script>
+
+</body>
+</html>
